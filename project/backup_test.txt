@@ -1,0 +1,9 @@
+DROP TABLE table1
+
+CREATE TABLE `table1` (
+  `jhku` int(11) NOT NULL,
+  `tyuio` int(11) NOT NULL,
+  `cv` int(11) NOT NULL,
+  `lkihk` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="icon/favicon.ico">
+
+    <title>Database Admin Tool</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="dashboard.html">Database Administration Tool</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" id="logout">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--sidebar-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="dashboard.html">Overview</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <p>MySQL</p>
+            <li class="active"><a href="dashboard-mysql-changes.html">View Changes</a></li>
+            <li><a href="dashboard-mysql-backups.html">View Backups</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <p>Mongo DB</p>
+            <li><a href="#">View Changes</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <p>Oracle</p>
+            <li><a href="#">View Changes</a></li>
+          </ul>
+        </div>
+        <!--sidebar end-->
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Dashboard</h1>
+
+          <div class="row placeholders">
+            <div class="col-xs-12 col-sm-12 placeholder">
+              <h1>MySQL Changes</h1>
+              <br>
+              <p>
+              Here you can view what changes have been made to each of your
+              databases. This will show you when you have inserted, deleted or
+              updated a record in any of your tables to the databases which you
+              have conencted.
+              </p>
+              <br>
+              <div class="dropdown" style="text-align: left;">
+                <button id="dbDropdown" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose Database
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu" id="mySQLList">
+                </ul>
+              </div>
+              <br>
+              <div id="change" class="dropdown hidden" style="text-align: left;">
+                <button id="dbTableDropdown" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose Table
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu" id="dbTables">
+                </ul>
+              </div>
+              <br>
+              <div id="changes" class="dropdown hidden" style="text-align: left;">
+                <button id="changeDropdown" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose Change Type
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu" id="cT">
+                  <li value="All" role="presentation">
+                    <a class="dropdown-item" href="javascript:void(0);">All</a>
+                  </li>
+                  <li value="Insert" role="presentation">
+                    <a class="dropdown-item" href="javascript:void(0);">Insert</a>
+                  </li>
+                  <li value="Update" role="presentation">
+                    <a class="dropdown-item" href="javascript:void(0);">Update</a>
+                  </li>
+                  <li value="Delete" role="presentation">
+                    <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                  </li>
+                </ul>
+              </div>
+              <br>
+              <div style="text-align: left;" id="viewChanges" class="hidden">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to see if we are logged in -->
+    <script src="js/checkLogin.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/dashboardChanges.js"></script>
+  </body>
+</html>
